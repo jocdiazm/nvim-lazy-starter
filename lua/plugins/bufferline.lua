@@ -12,7 +12,6 @@ return {
       always_show_bufferline = true,
       show_close_icon = false,
       show_buffer_close_icons = false,
-      -- separator_style = { "", "" },
       tab_size = 0,
       max_name_length = 25,
       offsets = {
@@ -23,7 +22,6 @@ return {
           text_align = "left",
         },
       },
-      modified_icon = "",
     },
   },
 }
