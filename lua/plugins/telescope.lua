@@ -5,8 +5,6 @@ return {
   },
   config = function(plugin, opts)
     -- run the core AstroNvim configuration function with the options table
-    require("plugins.configs.telescope")(plugin, opts)
-
     -- require telescope and load extensions as necessary
     local telescope = require("telescope")
     telescope.load_extension("media_files")
@@ -25,15 +23,14 @@ return {
       -- disable the keymap to grep files
       -- {"<leader>/", false},
       -- change a keymap
-      { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-      -- add a keymap to browse plugin files
       {
-        "<leader>fp",
+        "<leader>ff",
         function()
-          require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
+          require("telescope.builtin").find_files()
         end,
-        desc = "Find Plugin File",
+        desc = "Find Files",
       },
+      -- add a keymap to browse plugin files
       {
         "<leader>fb",
         function()
