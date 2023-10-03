@@ -26,6 +26,12 @@ return {
       button.opts.hl = "AlphaButtons"
       button.opts.hl_shortcut = "AlphaShortcut"
     end
+    -- Adding projects
+    local button = dashboard.button("p", " " .. " Projects", ":Telescope projects <CR>")
+    button.opts.hl = "AlphaButtons"
+    button.opts.hl_shortcut = "AlphaShortcut"
+    table.insert(dashboard.section.buttons.val, 4, button)
+    --
     dashboard.section.header.opts.hl = "AlphaHeader"
     dashboard.section.buttons.opts.hl = "AlphaButtons"
     dashboard.section.footer.opts.hl = "AlphaFooter"
