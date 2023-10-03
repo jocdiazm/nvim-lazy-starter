@@ -4,4 +4,5 @@
 --
 local opt = vim.opt
 
-opt.scrolloff = 15
+opt.scrolloff = 15 --Nice lines centering
+opt.cursorline = false -- No highlight
