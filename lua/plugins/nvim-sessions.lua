@@ -1,5 +1,4 @@
 return {
-
   {
     "folke/persistence.nvim",
     enabled = false,
@@ -12,6 +11,9 @@ return {
       autosave = {
         enabled = true,
         interval = 60,
+      },
+      options = {
+        "binary",
       },
     },
     keys = {

@@ -16,6 +16,12 @@ return {
             "venv",
             "__pycache__",
           },
+          select_strategy = "reset",
+          sorting_strategy = "ascending",
+          layout_config = {
+            prompt_position = "top",
+            preview_cutoff = 120,
+          },
         },
       })
     end,
