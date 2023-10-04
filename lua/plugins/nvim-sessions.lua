@@ -14,6 +14,17 @@ return {
       },
       options = {
         "binary",
+        "bufhidden",
+        "buflisted",
+        "cmdheight",
+        "diff",
+        "filetype",
+        "modifiable",
+        "previewwindow",
+        "readonly",
+        "scrollbind",
+        "winfixheight",
+        "winfixwidth",
       },
     },
     keys = {

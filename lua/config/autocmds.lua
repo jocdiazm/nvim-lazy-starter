@@ -14,6 +14,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
 vim.api.nvim_create_autocmd("VimLeavePre", {
   callback = function()
     require("resession").save(vim.fn.getcwd(), { dir = "dirsession", notify = false })
+    -- Always save a special session named "last"
+    require("resession").save("last")
   end,
 })
 
