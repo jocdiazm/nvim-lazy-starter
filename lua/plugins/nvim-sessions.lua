@@ -5,26 +5,44 @@ return {
     event = "BufReadPre",
   },
   {
-    "stevearc/resession.nvim",
+    "rmagatti/auto-session",
+    enabled = false,
     event = "BufReadPre",
     opts = {
-      autosave = {
-        enabled = true,
-        interval = 60,
+      log_level = "error",
+      auto_session_enabled = true,
+      auto_session_create_enabled = true,
+      auto_save_enabled = nil,
+      -- auto_session_enable_last_session = vim.loop.cwd() == vim.loop.os_homedir(),
+      -- auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
+    },
+  },
+  {
+    "rmagatti/session-lens",
+    enabled = false,
+    event = "BufReadPre",
+    opts = {
+      previewer = false,
+      theme_conf = { border = true, bg = false },
+    },
+    keys = {
+      {
+        "<leader>Sf",
+        function()
+          require("session-lens").search_session()
+        end,
+        desc = "Load a session",
       },
-      options = {
-        "binary",
-        "bufhidden",
-        "buflisted",
-        "cmdheight",
-        "diff",
-        "filetype",
-        "modifiable",
-        "previewwindow",
-        "readonly",
-        "scrollbind",
-        "winfixheight",
-        "winfixwidth",
+    },
+  },
+  {
+    "stevearc/resession.nvim",
+    event = "BufReadPre",
+    enabled = true,
+    opts = {
+      autosave = {
+        enabled = false,
+        interval = 60,
       },
     },
     keys = {
