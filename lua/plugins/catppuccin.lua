@@ -4,10 +4,12 @@ return {
     enabled = true,
     name = "catppuccin",
     opts = {
+      transparent_background = true,
       integrations = {
         alpha = true,
         aerial = true,
         dap = { enabled = true, enable_ui = true },
+        barbar = true,
         mason = true,
         neotree = true,
         notify = true,

@@ -31,8 +31,3 @@ map("v", "<M-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 --Smooth scrolling    -- smooth scrolling
 map("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
 map("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
-
--- commenting
--- map("n", "<leader>/", "gcc", { desc = "Commenting line" })
-
--- Telescope file browser

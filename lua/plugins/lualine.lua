@@ -7,7 +7,7 @@ return {
 
     return {
       options = {
-        theme = "auto",
+        theme = "catppuccin",
         globalstatus = true,
         disabled_filetypes = { statusline = { "dashboard", "alpha" } },
       },
@@ -23,6 +23,8 @@ return {
               info = icons.diagnostics.Info,
               hint = icons.diagnostics.Hint,
             },
+            separator = "",
+            padding = { right = 1, left = 1 },
           },
           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
@@ -63,7 +65,6 @@ return {
         },
         lualine_y = {
           { "progress", separator = " ", padding = { left = 1, right = 1 } },
-          -- { "location", padding = { left = 0, right = 1 } },
         },
         lualine_z = {
           function()
