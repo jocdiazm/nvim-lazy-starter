@@ -20,6 +20,7 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 -- Adding moving lines with metaf
+
 map("i", "<M-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down", noremap = true })
 map("i", "<M-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up", noremap = true })
 map("n", "<M-j>", "<cmd>m .+1<cr>==", { desc = "Move down", noremap = true })

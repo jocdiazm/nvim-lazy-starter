@@ -32,16 +32,15 @@ return {
           luasnip.lsp_expand(args.body)
         end,
       }
-      -- opts.window = {
-      --   completion = {
-      --     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-      --     winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None",
-      --   },
-      --   documentation = {
-      --     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-      --     winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None",
-      --   },
-      -- }
+      opts.window = {
+        completion = cmp.config.window.bordered({
+          winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+        }),
+
+        documentation = cmp.config.window.bordered({
+          winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+        }),
+      }
       opts.mapping["<C-Space>"] = cmp.mapping.complete()
       opts.mapping["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert })
       opts.mapping = vim.tbl_extend("force", opts.mapping, {

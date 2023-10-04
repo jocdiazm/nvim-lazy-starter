@@ -16,3 +16,9 @@ vim.api.nvim_create_autocmd("VimLeavePre", {
     require("resession").save(vim.fn.getcwd(), { dir = "dirsession", notify = false })
   end,
 })
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("highlight! BorderBG guibg=NONE guifg=#00ff00")
+  end,
+})

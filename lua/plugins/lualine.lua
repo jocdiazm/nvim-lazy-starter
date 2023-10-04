@@ -4,15 +4,18 @@ return {
   opts = function()
     local icons = require("lazyvim.config").icons
     local Util = require("lazyvim.util")
-
+    local theme = require("lualine.themes.catppuccin")
+    theme.normal.c.bg = nil
     return {
       options = {
-        theme = "catppuccin",
+        theme = theme,
+        section_separators = { left = "", right = "" },
+        component_separators = "|",
         globalstatus = true,
         disabled_filetypes = { statusline = { "dashboard", "alpha" } },
       },
       sections = {
-        lualine_a = {},
+        lualine_a = { "mode" },
         lualine_b = { "branch" },
         lualine_c = {
           {

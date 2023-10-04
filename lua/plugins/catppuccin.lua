@@ -5,6 +5,16 @@ return {
     name = "catppuccin",
     priority = 1000,
     opts = {
+      custom_highlights = function(colors)
+        return {
+          BorderBg = { bg = colors.none, fg = colors.lavender },
+          -- :
+          -- Comment = { fg = colors.flamingo },
+          -- TabLineSel = { bg = colors.pink },
+          -- CmpBorder = { fg = colors.surface2 },
+          -- Pmenu = { bg = colors.none },
+        }
+      end,
       transparent_background = true,
       integrations = {
         alpha = true,
@@ -54,14 +64,14 @@ return {
       },
     },
   },
-  -- {
-  --   "nvim-telescope/telescope.nvim",
-  --   optional = true,
-  --   opts = {
-  --     highlight = {
-  --       enable = true,
-  --       additional_vim_regex_highlighting = false,
-  --     },
-  --   },
-  -- },
+  {
+    "nvim-telescope/telescope.nvim",
+    optional = true,
+    opts = {
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+    },
+  },
 }
