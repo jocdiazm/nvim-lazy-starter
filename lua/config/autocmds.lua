@@ -17,8 +17,8 @@ vim.api.nvim_create_autocmd("VimLeavePre", {
   end,
 })
 
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    vim.cmd("highlight! BorderBG guibg=NONE guifg=#00ff00")
-  end,
-})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   callback = function()
+--     vim.cmd("highlight! BorderBG guibg=NONE guifg=#00ff00")
+--   end,
+-- })

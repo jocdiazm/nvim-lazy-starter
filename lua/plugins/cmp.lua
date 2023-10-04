@@ -7,6 +7,12 @@ return {
       return {}
     end,
   },
+  {
+    "rafamadriz/friendly-snippets",
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load()
+    end,
+  },
   -- then: setup supertab in cmp
   {
     "hrsh7th/nvim-cmp",
@@ -42,15 +48,17 @@ return {
         }),
       }
       opts.mapping["<C-Space>"] = cmp.mapping.complete()
+      opts.mapping["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert })
+      opts.mapping["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
       opts.mapping["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert })
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
+          if luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
+          elseif cmp.visible() then
             cmp.select_next_item()
             -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
             -- this way you will only jump inside the snippet region
-          elseif luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
           elseif has_words_before() then
             cmp.complete()
           else
@@ -67,6 +75,13 @@ return {
           end
         end, { "i", "s" }),
       })
+      opts.sources = cmp.config.sources({
+        { name = "nvim_lsp", priority = 1000 },
+        { name = "luasnip", priority = 750 },
+        { name = "buffer", priority = 500 },
+        { name = "path", priority = 250 },
+      })
+      return opts
     end,
   },
 }
