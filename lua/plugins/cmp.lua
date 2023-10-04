@@ -12,6 +12,9 @@ return {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-emoji",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets",
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
@@ -24,6 +27,23 @@ return {
       local luasnip = require("luasnip")
       local cmp = require("cmp")
 
+      opts.snippet = {
+        expand = function(args)
+          luasnip.lsp_expand(args.body)
+        end,
+      }
+      -- opts.window = {
+      --   completion = {
+      --     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      --     winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None",
+      --   },
+      --   documentation = {
+      --     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      --     winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None",
+      --   },
+      -- }
+      opts.mapping["<C-Space>"] = cmp.mapping.complete()
+      opts.mapping["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert })
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then

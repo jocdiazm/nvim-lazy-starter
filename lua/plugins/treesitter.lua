@@ -25,6 +25,9 @@ return {
         "yaml",
         "astro",
         "vue",
+        "ninja",
+        "rst",
+        "toml",
       },
       incremental_selection = {
         enable = true,

@@ -5,4 +5,6 @@
 local opt = vim.opt
 
 opt.scrolloff = 15 --Nice lines centering
+opt.swapfile = false --No nasty swapfiles
+opt.pumblend = 0 -- No highlight
 opt.cursorline = false -- No highlight

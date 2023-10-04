@@ -3,6 +3,7 @@ return {
     "catppuccin/nvim",
     enabled = true,
     name = "catppuccin",
+    priority = 1000,
     opts = {
       transparent_background = true,
       integrations = {
@@ -25,7 +26,10 @@ return {
         leap = true,
         markdown = true,
         neotest = true,
-        cmp = true,
+        cmp = {
+          enabled = true,
+          border = true,
+        },
         overseer = true,
         lsp_trouble = true,
         rainbow_delimiters = false,
@@ -35,17 +39,29 @@ return {
         navic = { enabled = true, custom_bg = "lualine" },
         treesitter = true,
         which_key = true,
+        native_lsp = {
+          enabled = true,
+          underlines = {
+            errors = { "undercurl" },
+            hints = { "undercurl" },
+            warnings = { "undercurl" },
+            information = { "undercurl" },
+          },
+        },
+        flash = true,
+        illuminate = true,
+        indent_blankline = { enabled = true },
       },
     },
   },
-  {
-    "nvim-telescope/telescope.nvim",
-    optional = true,
-    opts = {
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-    },
-  },
+  -- {
+  --   "nvim-telescope/telescope.nvim",
+  --   optional = true,
+  --   opts = {
+  --     highlight = {
+  --       enable = true,
+  --       additional_vim_regex_highlighting = false,
+  --     },
+  --   },
+  -- },
 }
