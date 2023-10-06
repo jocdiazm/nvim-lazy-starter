@@ -38,7 +38,7 @@ return {
   {
     "stevearc/resession.nvim",
     event = "BufReadPre",
-    enabled = true,
+    enabled = false,
     opts = {
       autosave = {
         enabled = false,
@@ -85,6 +85,51 @@ return {
         "<leader>S.",
         function()
           require("resession").load(vim.fn.getcwd(), { dir = "dirsession" })
+        end,
+        desc = "Load current directory session",
+      },
+    },
+  },
+  {
+    "Shatur/neovim-session-manager",
+    enabled = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {},
+    keys = {
+      {
+        "<leader>Sl",
+        function()
+          require("session_manager").load_last_session()
+        end,
+        desc = "Load last session",
+      },
+      {
+        "<leader>Ss",
+        function()
+          require("session_manager").save_current_session()
+        end,
+        desc = "Save this session",
+      },
+      {
+        "<leader>Sd",
+        function()
+          require("session_manager").delete_session()
+        end,
+        desc = "Delete a session",
+      },
+      {
+        "<leader>Sf",
+        function()
+          require("session_manager").load_session()
+        end,
+        desc = "Load a session",
+      },
+      {
+        "<leader>S.",
+        function()
+          require("session_manager").load_current_dir_session()
         end,
         desc = "Load current directory session",
       },
