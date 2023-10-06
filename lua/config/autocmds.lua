@@ -23,9 +23,22 @@
 --   end,
 -- })
 --
-vim.api.nvim_create_autocmd("VimLeavePre", {
+-- vim.api.nvim_create_autocmd("VimLeavePre", {
+--   callback = function()
+--     -- Always save a special session named "last"
+--     require("resession").save("last")
+--   end,
+-- })
+
+local config_group = vim.api.nvim_create_augroup("MyConfigGroup", {}) -- A global group for all your config autocommands
+-- Important: This will close anything non-buffer,
+-- including notifications, neotree, aerial...
+-- So if you need to keep them open, use 'VimLeavePre'.
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  group = config_group,
   callback = function()
-    -- Always save a special session named "last"
-    require("resession").save("last")
+    if vim.bo.filetype ~= "git" and not vim.bo.filetype ~= "gitcommit" and not vim.bo.filetype ~= "gitrebase" then
+      require("session_manager").save_current_session()
+    end
   end,
 })
