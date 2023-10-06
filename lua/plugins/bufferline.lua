@@ -31,7 +31,7 @@ return {
       -- change a keymap
       {
         "<leader>bD",
-        "<cmd>BufferLineCloseOthers<CR>",
+        "<cmd>BufferLineCloseOthers<cr>",
         desc = "Close all other buffers",
       },
       -- add a keymap to browse plugin files

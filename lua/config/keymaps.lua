@@ -30,6 +30,8 @@ map("v", "<M-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 map("n", "<M-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
 map("n", "<M-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
 
+-- Buffers
+map("n", "<leader>bD", "<cmd>BufferLineCloseOthers<cr>", { desc = "Close all other bufferssss" })
 --Smooth scrolling    -- smooth scrolling
 map("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
 map("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
