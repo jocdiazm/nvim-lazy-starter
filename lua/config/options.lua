@@ -9,4 +9,4 @@ opt.swapfile = false --No nasty swapfiles
 opt.pumblend = 0 -- No highlight
 opt.cursorline = false -- No highlight
 opt.conceallevel = 0 -- No hiding quotes in json files
-opt.sessionoptions = "buffers,curdir,help,tabpages,winsize"
+-- opt.sessionoptions = "buffers,curdir,help,tabpages,winsize"

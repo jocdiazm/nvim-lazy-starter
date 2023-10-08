@@ -3,14 +3,14 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = { -- add a new dependency to telescope that is our new plugin
       "nvim-telescope/telescope-media-files.nvim",
-      -- "rmagatti/session-lens",
+      "rmagatti/session-lens",
     },
     config = function(plugin, opts)
       -- run the core AstroNvim configuration function with the options table
       -- require telescope and load extensions as necessary
       local telescope = require("telescope")
       telescope.load_extension("media_files")
-      -- telescope.load_extension("session-lens")
+      telescope.load_extension("session-lens")
       telescope.setup({
         defaults = {
           file_ignore_patterns = {

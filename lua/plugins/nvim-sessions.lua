@@ -3,23 +3,37 @@ return {
     "folke/persistence.nvim",
     enabled = false,
     event = "BufReadPre",
+    opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp" } },
+  -- stylua: ignore
+  keys = {
+    { "<leader>qs", function() require("persistence").load() end, desc = "Restore Session" },
+    { "<leader>ql", function() require("persistence").load({ last = true }) end, desc = "Restore Last Session" },
+    { "<leader>qd", function() require("persistence").stop() end, desc = "Don't Save Current Session" },
+  },
   },
   {
     "rmagatti/auto-session",
-    enabled = false,
+    enabled = true,
     event = "BufReadPre",
     opts = {
       log_level = "error",
-      auto_session_enabled = true,
-      auto_session_create_enabled = true,
-      auto_save_enabled = nil,
-      -- auto_session_enable_last_session = vim.loop.cwd() == vim.loop.os_homedir(),
-      -- auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
+    },
+    keys = {
+      -- {
+      --   "<leader>Sf",
+      --   "<Cmd>Autosession search<Cr>",
+      --   desc = "Load a session",
+      -- },
+      {
+        "<leader>Sd",
+        "<Cmd>Autosession delete<Cr>",
+        desc = "Delete a session",
+      },
     },
   },
   {
     "rmagatti/session-lens",
-    enabled = false,
+    enabled = true,
     event = "BufReadPre",
     opts = {
       previewer = false,
@@ -41,7 +55,7 @@ return {
     enabled = false,
     opts = {
       autosave = {
-        enabled = false,
+        enabled = true,
         interval = 60,
       },
     },
@@ -92,7 +106,7 @@ return {
   },
   {
     "Shatur/neovim-session-manager",
-    enabled = true,
+    enabled = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
