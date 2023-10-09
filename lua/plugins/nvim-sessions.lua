@@ -145,6 +145,7 @@ return {
       {
         "<leader>Sf",
         function()
+          ---@diagnostic disable-next-line: missing-parameter
           require("session_manager").load_session()
         end,
         desc = "Load a session",
