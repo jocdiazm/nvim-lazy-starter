@@ -1,5 +1,6 @@
 return {
   "karb94/neoscroll.nvim",
+  event = "BufEnter",
   config = function()
     require("neoscroll").setup({
       hide_cursor = true, -- Hide cursor while scrolling
