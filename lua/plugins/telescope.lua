@@ -6,6 +6,7 @@ return {
       -- "jedrzejboczar/possession.nvim",
       -- "rmagatti/session-lens",
       -- "olimorris/persisted.nvim",
+      "stevearc/aerial.nvim",
     },
     config = function(plugin, opts)
       -- run the core AstroNvim configuration function with the options table
@@ -13,6 +14,7 @@ return {
       local telescope = require("telescope")
       telescope.load_extension("media_files")
       telescope.load_extension("neovim-project")
+      telescope.load_extension("aerial")
       --
       -- telescope.load_extension("persisted")
       -- telescope.load_extension("session-lens")
@@ -29,6 +31,16 @@ return {
           layout_config = {
             prompt_position = "top",
             preview_cutoff = 120,
+          },
+        },
+        extensions = {
+          aerial = {
+            -- Display symbols as <root>.<parent>.<symbol>
+            show_nesting = {
+              ["_"] = false, -- This key will be the default
+              json = true, -- You can set the option for specific filetypes
+              yaml = true,
+            },
           },
         },
       })
@@ -114,6 +126,27 @@ return {
             require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
           end,
           desc = "Find all files",
+        },
+        {
+          "<leader>fs",
+          function()
+            local aerial_avail, _ = pcall(require, "aerial")
+            if aerial_avail then
+              require("telescope").extensions.aerial.aerial()
+            else
+              require("telescope.builtin").lsp_document_symbols()
+            end
+          end,
+          desc = "Search symbols",
+        },
+        {
+          "<leader>fS",
+          function()
+            vim.ui.input({ prompt = "Workspace symbols: " }, function(query)
+              require("telescope.builtin").lsp_workspace_symbols({ query = query })
+            end)
+          end,
+          desc = "Search symbols in workspace",
         },
         -- maps.n["<leader>fh"] = { function() require("telescope.builtin").help_tags() end, desc = "Find help" },
         -- maps.n["<leader>fk"] = { function() require("telescope.builtin").keymaps() end, desc = "Find keymaps" },
