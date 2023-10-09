@@ -3,10 +3,10 @@
 -- Add any additional options here
 --
 local opt = vim.opt
-
 opt.scrolloff = 15 --Nice lines centering
 opt.swapfile = false --No nasty swapfiles
 opt.pumblend = 0 -- No highlight
 opt.cursorline = false -- No highlight
 opt.conceallevel = 0 -- No hiding quotes in json files
+opt.list = false --No showing invisible characters
 -- opt.sessionoptions = "buffers,curdir,help,tabpages,winsize"

@@ -35,3 +35,7 @@ map("n", "<leader>bD", "<cmd>BufferLineCloseOthers<cr>", { desc = "Close all oth
 --Smooth scrolling    -- smooth scrolling
 map("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
 map("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
+
+--Careful with this one, disable if something bad--
+map("i", "<C-u>", "<C-g>u<C-u>") -- Make <C-u> undo-friendly
+map("i", "<C-w>", "<C-g>u<C-w>") -- Make <C-w> undo-friendly
