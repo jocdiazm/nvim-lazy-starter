@@ -39,3 +39,5 @@ map("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
 --Careful with this one, disable if something bad--
 map("i", "<C-u>", "<C-g>u<C-u>") -- Make <C-u> undo-friendly
 map("i", "<C-w>", "<C-g>u<C-w>") -- Make <C-w> undo-friendly
+map("n", "<leader>Y", 'gg"+yG<C-o>') -- Copy all the text in the file then go gack
+map("v", "<leader>Y", 'gg"+yG') -- Copy all the text in the file then go back
