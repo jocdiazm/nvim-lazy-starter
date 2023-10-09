@@ -7,7 +7,7 @@ return {
     require("telescope").load_extension("projects")
   end,
   keys = {
-    { "<leader>P", "<Cmd>Telescope projects<CR>", desc = "Projects" },
+    { "<leader>Pl", "<Cmd>Telescope projects<CR>", desc = "Projects" },
     { "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "Projects" },
   },
 }
