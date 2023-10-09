@@ -30,8 +30,19 @@ return {
       -- {"<leader>/", false},
       -- change a keymap
       {
-        "<leader>bD",
-        "<cmd>BufferLineCloseOthers<cr>",
+        "<leader>bp",
+        function()
+          require("bufferline").close_with_pick()
+        end,
+        -- "<Cmd>BufferLineCloseOthers<Cr>",
+        desc = "Close buffer with pick",
+      },
+      {
+        "<leader>bC",
+        function()
+          require("bufferline").close_others()
+        end,
+        -- "<Cmd>BufferLineCloseOthers<Cr>",
         desc = "Close all other buffers",
       },
       -- add a keymap to browse plugin files
