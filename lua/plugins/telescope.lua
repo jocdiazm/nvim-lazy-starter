@@ -8,6 +8,7 @@ return {
       -- "olimorris/persisted.nvim",
       "stevearc/aerial.nvim",
     },
+    ---@diagnostic disable-next-line: unused-local
     config = function(plugin, opts)
       -- run the core AstroNvim configuration function with the options table
       -- require telescope and load extensions as necessary

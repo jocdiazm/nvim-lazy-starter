@@ -5,6 +5,7 @@ return {
   opts = {
     options = {
       always_show_bufferline = true,
+      truncate_names = true,
       separator_style = { "", "" },
       show_buffer_close_icons = false,
       indicator = { style = "none" },
