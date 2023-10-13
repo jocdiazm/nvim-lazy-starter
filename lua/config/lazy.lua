@@ -23,7 +23,9 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.lang.docker" },
     -- Project management
-    { import = "lazyvim.plugins.extras.util.project" },
+    -- { import = "lazyvim.plugins.extras.util.project" },
+    -- To be removed
+    -- { import = "lazyvim.plugins.extras.ui.alpha" },
     -- import/override with your plugins
     { import = "plugins" },
   },

@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   opts = function()
     local icons = require("lazyvim.config").icons
-    local Util = require("lazyvim.util")
+    local Util = require("lazyvim.util").ui
     local theme = require("lualine.themes.catppuccin")
     theme.normal.c.bg = nil
     return {
