@@ -4,7 +4,8 @@ return {
   opts = function()
     local icons = require("lazyvim.config").icons
     local Util = require("lazyvim.util").ui
-    local theme = require("lualine.themes.catppuccin")
+    -- local theme = require("lualine.themes.catppuccin")
+    local theme = require("lualine.themes.everforest")
     theme.normal.c.bg = nil
     return {
       options = {
