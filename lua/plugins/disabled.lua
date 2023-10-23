@@ -1,6 +1,12 @@
 return {
   { "RRethy/vim-illuminate", enabled = false },
   -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   enabled = false,
+  --   event = "LazyFile",
+  -- },
+  --
+  -- {
   --   "folke/noice.nvim",
   --   opts = {
   --     notify = {

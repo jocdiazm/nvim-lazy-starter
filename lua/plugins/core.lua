@@ -5,7 +5,7 @@ return {
     config = function()
       vim.o.background = "dark"
       vim.g.gruvbox_material_background = "hard"
-      vim.g.gruvbox_material_transparent_background = 1
+      -- vim.g.gruvbox_material_transparent_background = 1
     end,
   },
   { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
@@ -13,11 +13,7 @@ return {
   {
     "AstroNvim/astrotheme",
     priority = 1000, -- make sure to load this before all the other start plugins
-    opts = {
-      style = {
-        transparent = false,
-      },
-    },
+    opts = {},
   },
   {
     "oxfist/night-owl.nvim",
@@ -176,7 +172,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "everforest",
+      colorscheme = "catppuccin",
     },
   },
 }
