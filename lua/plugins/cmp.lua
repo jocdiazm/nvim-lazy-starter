@@ -19,7 +19,7 @@ return {
     dependencies = {
       "hrsh7th/cmp-emoji",
       "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
+      -- "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
     },
     ---@param opts cmp.ConfigSchema

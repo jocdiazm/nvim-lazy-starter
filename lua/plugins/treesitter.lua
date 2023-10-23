@@ -38,6 +38,12 @@ return {
           node_decremental = "<bs>",
         },
       },
+      autotag = {
+        enable = true,
+        enable_rename = true,
+        enable_close = false,
+        enable_close_on_slash = false,
+      },
     },
   },
 
@@ -51,10 +57,8 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
-    opts = {
-      autotag = {
-        enable = true,
-      },
-    },
+    enable = true,
+    event = "LazyFile",
+    opts = {},
   },
 }
